@@ -150,6 +150,11 @@ where
     pub fn get_dimensions(&self) -> (u8, u8) {
         self.display.get_dimensions()
     }
+
+    /// Turn off the display
+    pub fn turn_off(&mut self) -> Result<(), DisplayError> {
+        self.display.turn_off()
+    }
 }
 
 #[cfg(feature = "graphics")]

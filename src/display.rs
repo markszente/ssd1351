@@ -105,6 +105,10 @@ where
         self.display_size
     }
 
+    pub fn turn_off(&mut self) -> Result<(), DisplayError> {
+        Command::DisplayOn(false).send(&mut self.iface)
+    }
+
     /// Get display dimensions, taking into account the current rotation of the display
     ///
     /// ```rust
